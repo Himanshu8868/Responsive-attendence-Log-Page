@@ -1,0 +1,312 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #070707;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+   
+    animation: gradient-animation 10s ease infinite;
+    position: relative;
+}
+
+@keyframes gradient-animation {
+    0% { background-color: #070707; }
+    25% { background-color: #1a1a2e; }
+    50% { background-color: #16213e; }
+    75% { background-color: #0f3460; }
+    100% { background-color: #070707; }
+}
+
+/* Moving Background Lines */
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px), 
+                      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: move 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    0% { background-position: 0 0; }
+    100% { background-position: 100px 100px; }
+}
+
+marquee {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.container h {
+    color: rgb(15, 230, 165);
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+form {
+    color: wheat;
+    background-color: #425042;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    transition: box-shadow 0.4s ease;
+}
+
+form:hover {
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.5);
+}
+
+form label, form input {
+    width: 100%;
+}
+
+form input[type="text"], form input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:hover, form input[type="password"]:hover {
+    transform: translateY(-5px);
+    background-color: #1a1f22;
+    color: wheat;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus {
+    border-color: #00ffbb;
+    box-shadow: 0px 0px 5px rgba(0, 255, 255, 0.5);
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+form input[type="submit"]:hover {
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+}
+
+form input[type="submit"]:active {
+    background-color: #00ffbb;
+    box-shadow: 0px 0px 35px rgba(0, 255, 255, 0.5);
+}
+
+form input[type="submit"]::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    transition: top 0.5s ease;
+}
+
+form input[type="submit"]:hover::before {
+    top: 0;
+}
+
+#loads {
+    position: relative;
+    font-size: 16px;
+    color: #00ffbb;
+    margin-bottom: 10px;
+}
+
+#loads::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00ffbb;
+    animation: loading-bar 3s linear infinite;
+}
+
+@keyframes loading-bar {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+/* Social Media Login Buttons */
+.social-login {
+    margin-top: 15px;
+    text-align: center; /* Center the text and buttons */
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    color: #fff; /* Change text color if needed */
+}
+
+.social-buttons {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Align items in a column */
+    gap: 100px;
+    align-items: center; /* Center items horizontally */
+}
+
+.social-buttons a {
+    display: block; /* Make links block level */
+    width: 100%; /* Ensure buttons take full width */
+    padding: 10px;
+    margin: 5px 0; /* Space between buttons */
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.facebook-btn {
+    background-color: #3b5998; /* Facebook color */
+}
+
+.google-btn {
+    background-color: #db4437; /* Google color */
+}
+
+.facebook-btn:hover {
+    background-color: #2e437f; /* Darker shade on hover */
+}
+
+.google-btn:hover {
+    background-color: #c13524; /* Darker shade on hover */
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #1a1f22, #333);
+    color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 24px;
+    color: #ffb74d;
+    font-weight: bold;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.socials li {
+    margin: 0 15px;
+}
+
+.socials a {
+    color: #ffb74d;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.socials a:hover {
+    color: #ffffff;
+    transform: scale(1.2);
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #bbbbbb;
+}
+
+.fab {
+    font-size: 20px;
+}
+
+/* Form Links */
+.form-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.form-links a {
+    color: #fdb10d;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.form-links a:hover {
+    color: #0a011f;
+}
+
+.form-links span {
+    color: rgb(50, 245, 11);
+}

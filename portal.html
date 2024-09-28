@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="portal.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Attendance System with Geolocation</title>
+</head>
+<body>
+    <!-- Header and Navbar -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">GeoAttendance</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li>
+                    <a href="#attendance">Attendance</a>
+                    <ul class="dropdown">
+                        <li><a href="#fill-attendance">Log Attendance</a></li>
+                        <li><a href="#view-attendance">Review Logs</a></li>
+                    </ul>
+                </li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#downloads">Downloads</a></li>
+                <li><a href="#statistics">Statistics</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#user-dashboard">Dashboard</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#accessibility">Accessibility</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Advanced Geolocation Attendance System</h1>
+            <p>Seamless tracking and attendance logging with location verification.</p>
+            <a href="#attendance" class="cta-button">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2>Our Key Features</h2>
+        <div class="feature-item">
+            <h3>Location-Based Attendance</h3>
+            <p>Record attendance efficiently by verifying your location in real time.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Live Monitoring</h3>
+            <p>Stay up to date with instant log updates and real-time tracking.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Highly Secure</h3>
+            <p>Your attendance data is protected with advanced encryption methods.</p>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events" class="events-section">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li><strong>Webinar on Geolocation Benefits</strong> - September 30, 2024, at 3 PM</li>
+            <li><strong>Feature Update Release</strong> - October 15, 2024</li>
+            <li><strong>Annual Attendance Conference</strong> - November 10, 2024</li>
+        </ul>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <h2>Latest Insights</h2>
+        <article class="blog-post">
+            <h3><a href="#">How Geolocation is Transforming Attendance Tracking</a></h3>
+            <p>Discover how geolocation technology can enhance attendance management...</p>
+        </article>
+        <article class="blog-post">
+            <h3><a href="#">Best Practices for Attendance Logging</a></h3>
+            <p>Learn the most effective methods for logging attendance seamlessly...</p>
+        </article>
+    </section>
+
+    <!-- Downloadable Resources Section -->
+    <section id="downloads" class="downloads-section">
+        <h2>Downloadable Resources</h2>
+        <ul>
+            <li><a href="brochure.pdf" download>GeoAttendance Brochure</a></li>
+            <li><a href="user-manual.pdf" download>User Manual</a></li>
+            <li><a href="case-study.pdf" download>Case Study: Successful Implementation</a></li>
+        </ul>
+    </section>
+
+    <!-- Real-Time Statistics Section -->
+    <section id="statistics" class="statistics-section">
+        <h2>Real-Time Attendance Statistics</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>Current Attendance</h3>
+                <p id="currentAttendance">120</p>
+            </div>
+            <div class="stat-item">
+                <h3>Logged in Users</h3>
+                <p id="loggedInUsers">85</p>
+            </div>
+            <div class="stat-item">
+                <h3>Total Attendance Today</h3>
+                <p id="totalAttendanceToday">150</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <h2>Explore Our Interface</h2>
+        <div class="slider">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="beauty.jpg" alt="Attendance Dashboard">
+                    <p>View live attendance status on our intuitive dashboard.</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="beauty.jpg" alt="Real-time Geolocation">
+                    <p>Accurate geolocation verification for hassle-free logging.</p>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="beauty.jpg" alt="User-Friendly Interface">
+                    <p>A seamless, user-friendly interface designed for efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attendance Section -->
+    <section id="attendance" class="attendance-section">
+        <h2>Log Your Attendance</h2>
+        <button id="checkLocationBtn">Verify Location</button>
+        <div id="attendanceFor">
+            <h4>Attendance Form</h4>
+            <form id="form">
+                <label for="studentName">Employee/Student Name:</label>
+                <input type="text" id="studentName" required>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="statusMessage"></p>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <h2>Test Your Knowledge!</h2>
+        <form id="quizForm">
+            <div class="question">
+                <h3>What is the primary benefit of using geolocation for attendance tracking?</h3>
+                <input type="radio" name="answer" value="A"> A) Convenience<br>
+                <input type="radio" name="answer" value="B"> B) Accuracy<br>
+                <input type="radio" name="answer" value="C"> C) Speed<br>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="quizResult"></p>
+    </section>
+
+    <!-- User Dashboard Section -->
+    <section id="user-dashboard" class="user-dashboard-section">
+        <h2>Your Attendance Dashboard</h2>
+        <p>Here you can view your attendance history and statistics.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>September 28, 2024</td>
+                    <td>Present</td>
+                    <td>College Premises</td>
+                </tr>
+                <tr>
+                    <td>September 27, 2024</td>
+                    <td>Absent</td>
+                    <td>-</td>
+                </tr>
+                <!-- Add more rows as necessary -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Security Features Section -->
+    <section id="security" class="security-section">
+        <h2>Our Security Measures</h2>
+        <ul>
+            <li>End-to-end encryption for all data transactions.</li>
+            <li>Two-factor authentication for user accounts.</li>
+            <li>Regular security audits and updates to safeguard against threats.</li>
+        </ul>
+    </section>
+
+    <!-- Accessibility Features Section -->
+    <section id="accessibility" class="accessibility-section">
+        <h2>Accessibility Features</h2>
+        <ul>
+            <li>Screen reader compatibility for visually impaired users.</li>
+            <li>Keyboard navigation for easy access.</li>
+            <li>Adjustable text sizes for better readability.</li>
+        </ul>
+    </section>
+
+    <!-- Feedback Section -->
+    <section id="feedback" class="feedback-section">
+        <h2>Your Feedback Matters!</h2>
+        <form id="feedbackForm">
+            <label for="feedbackText">Share your thoughts:</label>
+            <textarea id="feedbackText" rows="4" required></textarea>
+            <button type="submit">Send Feedback</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 GeoAttendance. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="portal.js"></script>
+</body>
+</html>

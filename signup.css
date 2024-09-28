@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #070707;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Form Styling */
+form {
+    position: fixed;
+    color: wheat;
+    background-color: #425042;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label, form input {
+    width: 100%;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #333;
+}
+
+form input[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #575757;
+}
+
+/* Links Styling */
+.form-links {
+    margin-top: 10px;
+}
+
+.form-links a {
+    color: #ffb74d;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    background: linear-gradient(135deg, #1a1f22, #333);
+    color: #f4f4f4;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-content h3 {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 24px;
+    color: #ffb74d;
+    font-weight: bold;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.socials li {
+    margin: 0 15px;
+}
+
+.socials a {
+    color: #ffb74d;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.socials a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #bbbbbb;
+}
+
+/* Social icons using FontAwesome */
+.fab {
+    font-size: 20px;
+}

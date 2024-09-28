@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <marquee> <h1>BE AWESOME AND FOCUS YOUR GOAL</h1> </marquee>
+            <div id="loads"><h>Enter UserName and password </h></div>
+            Username: <input type="text" name="username" id="username" placeholder="username" />
+            <br>
+            Password: <input type="password" name="password" id="password" placeholder="password" />
+            <i id="togglePassword" class="fas fa-eye"></i> <!-- Password visibility toggle -->
+            <input type="submit" id="submit">
+            
+            <!-- Social Login Links -->
+            <div class="social-login">
+                <p>Or login with:</p>
+                <div class="social-buttons">
+                    <a href="" class="facebook-btn">Facebook</a>
+                    <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&ifkv=ARpgrqdVMRKdKg_j7YOU0TeP57myXcnQAMEMV5oQyt6eXBnlM7dGgrukfQBO1BQwf21JZ0HJPqFxAw&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-771009449%3A1727380620678152&ddm=0" class="google-btn">Google</a>
+                </div>
+            </div>
+
+            <!-- Forget Password and Sign Up Links -->
+            <div class="form-links">
+                <a href="#" class="forgot-password">Forgot Password?</a>
+                <span> | </span>
+                <a href="signup.html" class="sign-up">Sign Up</a>
+            </div>
+        </form>
+    </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h3>FGOLS</h3>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FGOLS All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>
