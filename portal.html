@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="portal.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Attendance System with Geolocation</title>
 </head>
 <body>
@@ -29,17 +30,13 @@
                         <li><a href="#view-attendance">Review Logs</a></li>
                     </ul>
                 </li>
-                <li><a href="#gallery">Gallery</a></li>
+              
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#events">Events</a></li>
+              
                 <li><a href="#blog">Blog</a></li>
-                <li><a href="#downloads">Downloads</a></li>
-                <li><a href="#statistics">Statistics</a></li>
-                <li><a href="#quiz">Quiz</a></li>
+        
                 <li><a href="#user-dashboard">Dashboard</a></li>
-                <li><a href="#security">Security</a></li>
-                <li><a href="#accessibility">Accessibility</a></li>
-                <li><a href="#feedback">Feedback</a></li>
+               
             </ul>
         </nav>
     </header>
@@ -97,30 +94,13 @@
     <section id="downloads" class="downloads-section">
         <h2>Downloadable Resources</h2>
         <ul>
-            <li><a href="brochure.pdf" download>GeoAttendance Brochure</a></li>
+            <li><a href="JS_Chapterwise_Notes.pdf" download>JAVASCRCIPT NOTES</a></li>
             <li><a href="user-manual.pdf" download>User Manual</a></li>
             <li><a href="case-study.pdf" download>Case Study: Successful Implementation</a></li>
         </ul>
     </section>
 
-    <!-- Real-Time Statistics Section -->
-    <section id="statistics" class="statistics-section">
-        <h2>Real-Time Attendance Statistics</h2>
-        <div class="stats">
-            <div class="stat-item">
-                <h3>Current Attendance</h3>
-                <p id="currentAttendance">120</p>
-            </div>
-            <div class="stat-item">
-                <h3>Logged in Users</h3>
-                <p id="loggedInUsers">85</p>
-            </div>
-            <div class="stat-item">
-                <h3>Total Attendance Today</h3>
-                <p id="totalAttendanceToday">150</p>
-            </div>
-        </div>
-    </section>
+  
 
     <!-- Slide Gallery Section -->
     <section id="gallery" class="gallery-section">
@@ -153,29 +133,41 @@
         <div id="attendanceFor">
             <h4>Attendance Form</h4>
             <form id="form">
-                <label for="studentName">Employee/Student Name:</label>
-                <input type="text" id="studentName" required>
-                <button type="submit">Submit</button>
+                <label for="studentName">Student Name:</label>
+                <input type="text" id="studentName" name="studentName" required>
+                <button id="checkLocationBtn">Check Location</button>
+                <button type="submit">Submit Attendance</button>
+                <p id="statusMessage"></p>
             </form>
+            <hr>
+          
+<h3>Add New Student (Admin Only):</h3>
+  <!-- Admin form to add new students -->
+  <form id="addStudentForm">
+    <label for="newStudentName">New Student Name:</label>
+    <input type="text" id="newStudentName" required>
+    <label for="adminPassword">Admin Password:</label>
+    <input type="password" id="adminPassword" required>
+    <button type="submit">Add Student</button>
+</form>
+
+<hr>
             <p id="statusMessage"></p>
         </div>
     </section>
 
     <!-- Quiz Section -->
-    <section id="quiz" class="quiz-section">
-        <h2>Test Your Knowledge!</h2>
-        <form id="quizForm">
-            <div class="question">
-                <h3>What is the primary benefit of using geolocation for attendance tracking?</h3>
-                <input type="radio" name="answer" value="A"> A) Convenience<br>
-                <input type="radio" name="answer" value="B"> B) Accuracy<br>
-                <input type="radio" name="answer" value="C"> C) Speed<br>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="quizResult"></p>
-    </section>
-
+    <form id="quizForm">
+        <label for="answer">Quiz: What is the primary benefit of geolocation in attendance tracking?</label>
+        <br>
+        <input type="radio" id="answerA" name="answer" value="A">
+        <label for="answerA">Speed</label><br>
+        <input type="radio" id="answerB" name="answer" value="B">
+        <label for="answerB">Accuracy</label><br>
+        <button type="submit">Submit Answer</button>
+    </form>
+    <p id="quizResult"></p>
+    
     <!-- User Dashboard Section -->
     <section id="user-dashboard" class="user-dashboard-section">
         <h2>Your Attendance Dashboard</h2>
@@ -226,20 +218,28 @@
 
     <!-- Feedback Section -->
     <section id="feedback" class="feedback-section">
-        <h2>Your Feedback Matters!</h2>
         <form id="feedbackForm">
-            <label for="feedbackText">Share your thoughts:</label>
-            <textarea id="feedbackText" rows="4" required></textarea>
-            <button type="submit">Send Feedback</button>
+            <label for="feedbackText">Provide Feedback:</label>
+            <textarea id="feedbackText" rows="4"></textarea>
+            <button type="submit">Submit Feedback</button>
         </form>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer">
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+          </div>
         <p>&copy; 2024 GeoAttendance. All rights reserved.</p>
     </footer>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="portal.js"></script>
+    <!-- <script src="portal.js"></script> -->
+    <script type="module" src="main.js"></script>
+
 </body>
 </html>
