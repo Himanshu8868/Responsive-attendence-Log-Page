@@ -1,0 +1,11 @@
+{
+  "name": "responsive-login",
+  "version": "1.0.0",
+  "description": "<br>\r   this is my first project with git \r   <br>\r     Himanshu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
